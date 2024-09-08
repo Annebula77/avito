@@ -7,7 +7,7 @@ interface Breakpoints {
   xxl: string;
 }
 
-const breakpoints: Breakpoints = {
+export const breakpoints: Breakpoints = {
   xs: '576px',
   sm: '576px',
   md: '768px',

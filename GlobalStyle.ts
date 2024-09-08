@@ -1,6 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
 @font-face {
     font-family: 'Jost';
     font-style: normal;
@@ -19,8 +24,8 @@ const GlobalStyle = createGlobalStyle`
     font-stretch: normal;
     font-display: swap;
     src: url('./fonts/Jost-Medium.woff2') format('woff2'),
-      url('./fonts/Jost-Medium.woff') format('woff'),
-      url('./fonts/Jost-Medium.ttf') format('truetype');
+      url('../fonts/Jost-Medium.woff') format('woff'),
+      url('../fonts/Jost-Medium.ttf') format('truetype');
   }
 
   @font-face {
@@ -44,6 +49,12 @@ const GlobalStyle = createGlobalStyle`
       url('./fonts/Jost-Bold.woff') format('woff'),
       url('./fonts/Jost-Bold.ttf') format('truetype');
   }
+
+
+
+  /* * {
+  box-shadow: 0 0 0 1px red;
+} */
   
   html, body, #root {
   width: 100%;
