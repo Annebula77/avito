@@ -18,6 +18,15 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;  
+  margin: 0;
+  font-family: 'Jost', sans-serif;
+  color: rgba(76, 81, 74, 1);    
+}
+
 @font-face {
     font-family: 'Jost';
     font-style: normal;
@@ -66,15 +75,8 @@ const GlobalStyle = createGlobalStyle`
 
   /* * {
   box-shadow: 0 0 0 1px red;
-} */
-  
-  html, body, #root {
-  width: 100%;
-  min-height: 100vh;
-  padding: 0;  
-  margin: 0;
-  font-family: 'Jost', sans-serif;    
-}
+} */ 
+
 `;
 
 export default GlobalStyle;

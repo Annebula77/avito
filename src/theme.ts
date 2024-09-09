@@ -36,6 +36,7 @@ const theme = createTheme({
       fontStyle: 'normal',
       fontWeight: 700,
       lineHeight: '70px',
+      color: 'rgba(76, 81, 74, 1)',
     },
     h2: {
       fontFamily: 'Jost',
@@ -43,6 +44,7 @@ const theme = createTheme({
       fontStyle: 'normal',
       fontWeight: 600,
       lineHeight: 'normal',
+      color: 'rgba(76, 81, 74, 1)',
     },
     h3: {
       fontFamily: 'Jost',
@@ -50,6 +52,7 @@ const theme = createTheme({
       fontStyle: 'normal',
       fontWeight: 600,
       lineHeight: 'normal',
+      color: 'rgba(76, 81, 74, 1)',
     },
     h4: {
       fontFamily: 'Jost',
@@ -57,13 +60,15 @@ const theme = createTheme({
       fontStyle: 'normal',
       fontWeight: 400,
       lineHeight: 'normal',
+      color: 'rgba(76, 81, 74, 1)',
     },
     h5: {
       fontFamily: 'Jost',
       fontSize: '28px',
       fontStyle: 'normal',
-      fontWeight: 600,
+      fontWeight: 500,
       lineHeight: 'normal',
+      color: 'rgba(76, 81, 74, 1)',
     },
   },
   components: {

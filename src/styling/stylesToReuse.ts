@@ -95,3 +95,32 @@ export const HeaderBox = styled.div`
     justify-content: space-between;
   `}
   `;
+
+export const Main = styled.main`
+  margin: 0;
+  padding: 40px 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  ${media.md`
+    padding: 40px 100px;
+  `}
+
+  ${media.xl`
+    padding: 40px 300px;
+  `}
+  `;
+
+// Styled Link for list items
+
+export const CardLink = styled(Link)`
+   margin: 0;
+  padding: 0;
+  text-decoration: none;
+  transition: opacity 0.4s ease;
+  &:hover {
+    opacity: 0.6;
+  }`;

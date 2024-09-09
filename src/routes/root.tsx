@@ -8,7 +8,7 @@ export default function Root() {
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Объявления | MarketMe</title>
+        <title> Мои объявления | MarketMe</title>
         <meta
           name="description"
           content="Доска объявлений для продажи и покупки. Продавайте вместе с нами!"

@@ -10,6 +10,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './routes/root.tsx';
 import NoMatchPage from './routes/noMatch.tsx';
 import ErrorPage from './routes/errorPage.tsx';
+import AdsListPage from './routes/adsListPage.tsx';
+import OrderList from './components/OrderList/OrderList.tsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -18,11 +20,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <NoMatchPage />,
+        element: <AdsListPage />,
       },
       {
         path: 'orders',
-        element: <ErrorPage />,
+        element: <OrderList />,
       },
       {
         path: '*',

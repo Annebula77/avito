@@ -18,20 +18,10 @@ import ListItemText from '@mui/material/ListItemText';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useNavigate, Outlet } from 'react-router-dom'; // React Router 6
-import { HeaderBox, Logo } from '../../styling/stylesToReuse';
+import { HeaderBox, Logo, Main } from '../../styling/stylesToReuse';
 
 
 const drawerWidth = 260;
-
-const Main = styled('main')<{
-}>(({ theme }) => ({
-  flexGrow: 1,
-  padding: theme.spacing(3),
-  transition: theme.transitions.create('margin', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-}));
 
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -76,7 +66,7 @@ export default function NavBoard() {
           </IconButton>
           <HeaderBox>
             <Logo>marketme</Logo>
-            <Typography variant="h2" align='left'>
+            <Typography variant="h2" align='left' color="primary.light">
               Петр Петров
             </Typography>
           </HeaderBox>
