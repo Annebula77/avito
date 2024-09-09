@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import CssBaseline from '@mui/material/CssBaseline';
-import GlobalStyle from '../GlobalStyle.ts';
+import GlobalStyle from './styling/GlobalStyle.ts';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './theme.ts';
 import { Provider } from 'react-redux';
