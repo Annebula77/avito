@@ -11,15 +11,6 @@ const theme = createTheme({
       main: 'rgba(229, 229, 229, 1)', // grey
       contrastText: 'rgba(229, 229, 229, 1)', // For text on secondary color, use primary
     },
-    error: {
-      main: 'rgba(255, 75, 107, 1)', // Assuming Alert is for errors red
-    },
-    warning: {
-      main: 'rgba(255, 233, 39, 1)', // Your UI kit Warning color yellow
-    },
-    success: {
-      main: 'rgba(5, 170, 111, 1)', // Your UI kit Success color green
-    },
     background: {
       default: 'rgba(255, 255, 255, 1)', // white background
       paper: 'rgba(255, 255, 255, 1)', // For elements like cards, dialogues
@@ -42,7 +33,7 @@ const theme = createTheme({
       fontFamily: 'Jost',
       fontSize: '24px',
       fontStyle: 'normal',
-      fontWeight: 600,
+      fontWeight: 500,
       lineHeight: 'normal',
       color: 'rgba(76, 81, 74, 1)',
     },
@@ -64,7 +55,7 @@ const theme = createTheme({
     },
     h5: {
       fontFamily: 'Jost',
-      fontSize: '28px',
+      fontSize: '20px',
       fontStyle: 'normal',
       fontWeight: 500,
       lineHeight: 'normal',

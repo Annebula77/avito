@@ -5,14 +5,15 @@ import { Typography } from '@mui/material';
 
 // Service page styling
 export const Container = styled.section`
- margin: 0;
+  margin: 0;
   padding: 100px 0;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px;`;
+  gap: 30px;
+`;
 
 export const Picture = styled.img`
   width: 200px;
@@ -25,13 +26,13 @@ export const Picture = styled.img`
   width: 300px;
   height: 300px;
   `}
-  `;
+`;
 
 // Link-button styling
 
 export const ServiceStyledTypography = styled(Typography)`
   && {
-    color: rgba(4, 78, 196, 1);  
+    color: rgba(4, 78, 196, 1);
     font-size: 24px;
 
     @media (max-width: 768px) {
@@ -41,7 +42,7 @@ export const ServiceStyledTypography = styled(Typography)`
 `;
 
 export const StyledLink = styled(Link)`
-   margin: 0;
+  margin: 0;
   padding: 20px 20px;
   border-radius: 80px;
   color: rgba(255, 255, 255, 1);
@@ -50,7 +51,7 @@ export const StyledLink = styled(Link)`
   font-weight: 600;
   line-height: 1.5;
   text-decoration: none;
-    background-color: rgba(66, 119, 202, 1);
+  background-color: rgba(66, 119, 202, 1);
   transition: opacity 0.4s ease;
   &:hover {
     opacity: 0.6;
@@ -59,7 +60,7 @@ export const StyledLink = styled(Link)`
   ${media.md`
     padding: 20px 40px;
   `}
-  `;
+`;
 
 export const Logo = styled.h2`
   padding: 0;
@@ -83,7 +84,7 @@ export const Logo = styled.h2`
   `}
 `;
 
-export const HeaderBox = styled.div`  
+export const HeaderBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -94,7 +95,7 @@ export const HeaderBox = styled.div`
     align-items: center;
     justify-content: space-between;
   `}
-  `;
+`;
 
 export const Main = styled.main`
   margin: 0;
@@ -112,15 +113,30 @@ export const Main = styled.main`
   ${media.xl`
     padding: 40px 300px;
   `}
-  `;
+`;
 
 // Styled Link for list items
 
 export const CardLink = styled(Link)`
-   margin: 0;
+  margin: 0;
   padding: 0;
   text-decoration: none;
   transition: opacity 0.4s ease;
   &:hover {
     opacity: 0.6;
-  }`;
+  }
+`;
+
+export const StyledSpan = styled.span`
+  color: rgba(66, 119, 202, 1);
+`;
+
+export const StyledSection = styled.section`
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+`;

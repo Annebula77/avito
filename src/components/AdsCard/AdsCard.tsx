@@ -1,59 +1,13 @@
-import { Card, CardContent, Typography } from "@mui/material";
+import { Card, CardContent, Typography } from '@mui/material';
 import StackedBarChartRoundedIcon from '@mui/icons-material/StackedBarChartRounded';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
-import styled from "styled-components";
-import { CardLink } from "../../styling/stylesToReuse";
-import { media } from "../../styling/breakpoints";
-
-const StyledImage = styled.img`
-width: 100px;
-height: 100px;
-object-fit: cover;
-margin: 0;
-padding: 0;
-border-radius: 20px;
-`;
-
-const RowWrapper = styled.div`
-  padding: 20px 0 0;
-  margin: 0;
-  width: 100%; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px; 
-
-  ${media.xl`
-    padding: 0 0 0 110px;
-    justify-content: flex-start;
-    gap: 40px; 
-  `}
-`;
-
-const NameWrapper = styled.article`
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-
-  ${media.xl`
-    flex-direction: row;
-  `}
-`;
-
-const ReactionWrapper = styled.div`
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 4px;  
-`;
-
-
-
+import { CardLink } from '../../styling/stylesToReuse';
+import {
+  NameWrapper,
+  ReactionWrapper,
+  RowWrapper,
+  StyledImage,
+} from './adsCardStyles';
 
 interface AdsCardProps {
   navLink: string;
@@ -62,17 +16,42 @@ interface AdsCardProps {
   price: number;
   views: number;
   likes: number;
+  quantity?: number;
 }
 
-const AdsCard: React.FC<AdsCardProps> = ({ name, image, price, views, likes, navLink }) => {
-
+const AdsCard: React.FC<AdsCardProps> = ({
+  name,
+  image,
+  price,
+  views,
+  likes,
+  navLink,
+  quantity,
+}) => {
   return (
     <CardLink to={navLink}>
-      <Card sx={{ minWidth: '240px', maxWidth: '800px' }}>
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingX: '60px' }}>
+      <Card sx={{ minWidth: '240px', maxWidth: '900px' }}>
+        <CardContent
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            paddingX: '60px',
+          }}
+        >
           <NameWrapper>
             <StyledImage src={image} alt={name} />
-            <Typography variant="h2" color="text.primary">{name}</Typography>
+            <Typography
+              variant="h2"
+              color="text.primary"
+              sx={{
+                overflow: { xs: 'hidden' },
+                textOverflow: { xs: 'ellipsis' },
+                whiteSpace: { xs: 'nowrap' },
+              }}
+            >
+              {name}
+            </Typography>
             <Typography
               variant="h2"
               color="primary.main"
@@ -80,10 +59,13 @@ const AdsCard: React.FC<AdsCardProps> = ({ name, image, price, views, likes, nav
               sx={{
                 marginLeft: {
                   xs: 0,
-                  lg: 'auto'
-                }
+                  lg: 'auto',
+                },
               }}
-            >{price} рублей</Typography>
+            >
+              {price} рублей
+            </Typography>
+            {quantity && <Typography variant="h4"> x {quantity}</Typography>}
           </NameWrapper>
           <RowWrapper>
             <ReactionWrapper>
@@ -98,7 +80,7 @@ const AdsCard: React.FC<AdsCardProps> = ({ name, image, price, views, likes, nav
         </CardContent>
       </Card>
     </CardLink>
-  )
-}
+  );
+};
 
 export default AdsCard;

@@ -1,10 +1,7 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import NavBoard from '../components/NavBoard/NavBoard';
 
-
 export default function Root() {
-
-
   return (
     <HelmetProvider>
       <Helmet>
@@ -18,7 +15,6 @@ export default function Root() {
       <>
         <NavBoard />
       </>
-
     </HelmetProvider>
   );
 }

@@ -20,9 +20,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useNavigate, Outlet } from 'react-router-dom'; // React Router 6
 import { HeaderBox, Logo, Main } from '../../styling/stylesToReuse';
 
-
 const drawerWidth = 260;
-
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -36,7 +34,6 @@ export default function NavBoard() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const navigate = useNavigate();
-
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -66,7 +63,7 @@ export default function NavBoard() {
           </IconButton>
           <HeaderBox>
             <Logo>marketme</Logo>
-            <Typography variant="h2" align='left' color="primary.light">
+            <Typography variant="h2" align="left" color="primary.light">
               Петр Петров
             </Typography>
           </HeaderBox>
@@ -83,13 +80,17 @@ export default function NavBoard() {
             borderTopRightRadius: '20px',
           },
         }}
-        variant='temporary'
+        variant="temporary"
         anchor="left"
         open={open}
       >
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose} color='primary' >
-            {theme.direction === 'ltr' ? <ChevronLeftIcon fontSize='large' /> : <ChevronRightIcon fontSize='large' />}
+          <IconButton onClick={handleDrawerClose} color="primary">
+            {theme.direction === 'ltr' ? (
+              <ChevronLeftIcon fontSize="large" />
+            ) : (
+              <ChevronRightIcon fontSize="large" />
+            )}
           </IconButton>
         </DrawerHeader>
         <Divider />
@@ -97,15 +98,18 @@ export default function NavBoard() {
           <ListItem disablePadding>
             <ListItemButton onClick={() => handleListClick('/')}>
               <ListItemIcon>
-                <ArticleOutlinedIcon color='primary' />
+                <ArticleOutlinedIcon color="primary" />
               </ListItemIcon>
-              <ListItemText primary="Объявления" sx={{ color: 'primary.dark' }} />
+              <ListItemText
+                primary="Объявления"
+                sx={{ color: 'primary.dark' }}
+              />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton onClick={() => handleListClick('/orders')} >
+            <ListItemButton onClick={() => handleListClick('/orders')}>
               <ListItemIcon>
-                <ShoppingCartOutlinedIcon color='primary' />
+                <ShoppingCartOutlinedIcon color="primary" />
               </ListItemIcon>
               <ListItemText primary="Заказы" sx={{ color: 'primary.dark' }} />
             </ListItemButton>

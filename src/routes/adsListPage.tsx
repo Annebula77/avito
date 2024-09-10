@@ -1,5 +1,4 @@
-import AdsList from "../components/AdsList/AdsList";
-
+import AdsList from '../components/AdsList/AdsList';
 
 export default function AdsListPage() {
   return (
