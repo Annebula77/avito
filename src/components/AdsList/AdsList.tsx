@@ -114,7 +114,7 @@ const AdsList = () => {
         }}
       >
         <Box>
-          <AdvertForm />
+          <AdvertForm onSubmit={handleClose} />
         </Box>
       </Modal>
     </StyledSection>

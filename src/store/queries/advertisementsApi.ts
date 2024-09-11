@@ -65,7 +65,7 @@ export const advertisementsApi = createApi({
     updateAdvertisement: builder.mutation({
       query: ({ id, ...update }) => ({
         url: `advertisements/${id}`,
-        method: 'PUT',
+        method: 'PATCH',
         body: update,
       }),
     }),

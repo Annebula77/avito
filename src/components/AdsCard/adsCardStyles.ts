@@ -34,8 +34,7 @@ export const NameWrapper = styled.article`
   align-items: center;
   gap: 10px;
 
-  ${media.lg`
+  ${media.md`
     flex-direction: row;
      `}
 `;
-

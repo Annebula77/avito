@@ -2,8 +2,8 @@ import { Helmet } from 'react-helmet-async';
 import AdvertComponent from '../components/AdvertComponent/AdvertComponent';
 import { useParams } from 'react-router-dom';
 import { useGetAdvertisementByIdQuery } from '../store/queries/advertisementsApi';
-import NoMatchPage from './noMatch';
 import Loader from '../components/Loader/Loader';
+import ErrorPage from './errorPage';
 
 export default function AdvertPage() {
   const { productId } = useParams<{ productId: string }>();
@@ -12,7 +12,7 @@ export default function AdvertPage() {
   );
 
   if (error) {
-    return <NoMatchPage />;
+    return <ErrorPage />;
   }
 
   if (isLoading && !data) {

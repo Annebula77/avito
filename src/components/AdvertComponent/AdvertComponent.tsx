@@ -1,10 +1,12 @@
 import {
+  Alert,
   Box,
   Button,
   Card,
   CardContent,
   InputAdornment,
   Modal,
+  Snackbar,
   TextField,
   Tooltip,
   Typography,
@@ -13,93 +15,36 @@ import StackedBarChartRoundedIcon from '@mui/icons-material/StackedBarChartRound
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 import CurrencyRubleRoundedIcon from '@mui/icons-material/CurrencyRubleRounded';
 import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
-import { type AdvertisementModel } from '../../models/advertismentSchema';
-import styled from 'styled-components';
-import { media } from '../../styling/breakpoints';
 import { ReactionWrapper, StyledSpan } from '../../styling/stylesToReuse';
 import { formatDate } from '../../utils/functions/formatDate';
-import { useState } from 'react';
 import ImageChangeForm from '../ImageChangeForm/ImageChangeForm';
-import { formatPrice } from '../../utils/functions/formatPrice';
 
-const StyledFigure = styled.figure`
-  margin: 0 0 20px;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+import {
+  ActionWrapper,
+  PriceWrapper,
+  StyledButton,
+  StyledFigure,
+  StyledFigureCaption,
+} from './AdvertComponentStyles';
+import useAdvertComponent, {
+  type AdvertComponentProps,
+} from './useAdvertComponent';
 
-    ${media.md` 
-      width: 400px;
-      height: 400px;
-    `}
-  }
-
-  ${media.md` 
-  flex-direction: row;
-  justify-content: space-between;
-    `}
-`;
-
-const StyledFigureCaption = styled.figcaption`
-  margin: 0 0 auto auto;
-  padding: 0;
-  display: flex;
-  max-width: fit-content;
-  flex-direction: column;
-  align-items: flex-start;
-
-  gap: 30px;
-
-  ${media.md` 
-   
-    align-items: flex-end;
-    `}
-`;
-
-const PriceWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  gap: 10px;
-`;
-
-const ActionWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
-`;
-
-const StyledButton = styled.button`
-  display: flex;
-  margin: 0;
-  padding: 0;
-  background-color: none;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: opacity 0.4s ease;
-  &:hover {
-    opacity: 0.6;
-  }
-`;
-interface AdvertComponentProps {
-  advert: AdvertisementModel;
-}
 const AdvertComponent: React.FC<AdvertComponentProps> = ({ advert }) => {
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const {
+    open,
+    openSnackbar,
+    snackbarMessage,
+    snackbarSeverity,
+    localAdvert,
+    errorMessages,
+    handleChange,
+    handleBlur,
+    handleOpen,
+    handleClose,
+    handleCloseSnackbar,
+    handleImageSubmit,
+  } = useAdvertComponent({ advert });
 
   return (
     <Card
@@ -115,8 +60,8 @@ const AdvertComponent: React.FC<AdvertComponentProps> = ({ advert }) => {
           <Tooltip title="Загрузить новое изображение" placement="top">
             <StyledButton onClick={handleOpen}>
               <img
-                src={advert.imageUrl}
-                alt={advert.name}
+                src={localAdvert.imageUrl}
+                alt={localAdvert.name}
                 loading="lazy"
                 decoding="async"
               />
@@ -130,9 +75,12 @@ const AdvertComponent: React.FC<AdvertComponentProps> = ({ advert }) => {
             <Tooltip title="Изменить наименование" placement="top">
               <TextField
                 fullWidth
-                error
+                error={!!errorMessages.name}
+                helperText={errorMessages.name}
                 id="name-input"
-                value={advert.name}
+                value={localAdvert.name}
+                onChange={handleChange}
+                onBlur={() => handleBlur('name', localAdvert.name)}
                 variant="standard"
                 slotProps={{
                   input: {
@@ -161,7 +109,8 @@ const AdvertComponent: React.FC<AdvertComponentProps> = ({ advert }) => {
                 </Typography>
                 <TextField
                   fullWidth
-                  error
+                  error={!!errorMessages.price}
+                  helperText={errorMessages.price}
                   id="price-input"
                   slotProps={{
                     input: {
@@ -180,8 +129,10 @@ const AdvertComponent: React.FC<AdvertComponentProps> = ({ advert }) => {
                       },
                     },
                   }}
+                  value={localAdvert.price}
                   variant="standard"
-                  value={formatPrice(advert.price)}
+                  onChange={handleChange}
+                  onBlur={() => handleBlur('price', localAdvert.price)}
                 />
               </PriceWrapper>
             </Tooltip>
@@ -220,12 +171,15 @@ const AdvertComponent: React.FC<AdvertComponentProps> = ({ advert }) => {
         <Tooltip title="Изменить описание товара" placement="top">
           <TextField
             fullWidth
-            error
+            error={!!errorMessages.description}
+            helperText={errorMessages.description}
             id="description-input"
             multiline
             maxRows={10}
             variant="outlined"
-            value={advert.description}
+            value={localAdvert.description}
+            onChange={handleChange}
+            onBlur={() => handleBlur('description', localAdvert.description)}
             slotProps={{
               input: {
                 sx: {
@@ -254,9 +208,25 @@ const AdvertComponent: React.FC<AdvertComponentProps> = ({ advert }) => {
         }}
       >
         <Box>
-          <ImageChangeForm />
+          <ImageChangeForm
+            initialImageUrl={localAdvert.imageUrl}
+            onSubmit={handleImageSubmit}
+          />
         </Box>
       </Modal>
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={3000}
+        onClose={handleCloseSnackbar}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity={snackbarSeverity}
+          sx={{ width: '100%' }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </Card>
   );
 };

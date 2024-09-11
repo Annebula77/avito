@@ -74,7 +74,7 @@ const AdsCard: React.FC<AdsCardProps> = ({
               sx={{
                 marginLeft: {
                   xs: 0,
-                  lg: 'auto',
+                  md: 'auto',
                 },
                 paddingLeft: {
                   sx: 0,
