@@ -39,12 +39,3 @@ export const NameWrapper = styled.article`
      `}
 `;
 
-export const ReactionWrapper = styled.div`
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 4px;
-`;

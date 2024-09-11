@@ -12,6 +12,7 @@ import NoMatchPage from './routes/noMatch.tsx';
 import ErrorPage from './routes/errorPage.tsx';
 import AdsListPage from './routes/adsListPage.tsx';
 import OrderList from './components/OrderList/OrderList.tsx';
+import AdvertPage from './routes/advertPage.tsx';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <AdsListPage />,
+      },
+      {
+        path: 'ads/:productId',
+        element: <AdvertPage />,
       },
       {
         path: 'orders',

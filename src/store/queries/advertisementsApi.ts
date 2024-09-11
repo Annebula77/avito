@@ -41,8 +41,19 @@ export const advertisementsApi = createApi({
     }),
     getAdvertisementById: builder.query({
       query: id => `advertisements/${id}`,
-      transformResponse: (response: AdvertisementModel) =>
-        advertisementSchema.parse(response),
+      transformResponse: (response: AdvertisementModel) => {
+        try {
+          const advertisement = advertisementSchema.parse(response);
+          return advertisement;
+        } catch (error) {
+          if (error instanceof z.ZodError) {
+            console.error('Zod validation error:', error.errors);
+          } else {
+            console.error('Unexpected error:', error);
+          }
+          throw error;
+        }
+      },
     }),
     createAdvertisement: builder.mutation({
       query: newAd => ({

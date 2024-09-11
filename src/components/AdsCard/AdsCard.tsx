@@ -2,13 +2,9 @@ import { Button, Card, CardContent, Tooltip, Typography } from '@mui/material';
 import StackedBarChartRoundedIcon from '@mui/icons-material/StackedBarChartRounded';
 import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
-import { CardLink } from '../../styling/stylesToReuse';
-import {
-  NameWrapper,
-  ReactionWrapper,
-  RowWrapper,
-  StyledImage,
-} from './adsCardStyles';
+import { CardLink, ReactionWrapper } from '../../styling/stylesToReuse';
+import { NameWrapper, RowWrapper, StyledImage } from './adsCardStyles';
+import { formatPrice } from '../../utils/functions/formatPrice';
 
 interface AdsCardProps {
   navLink: string;
@@ -54,7 +50,12 @@ const AdsCard: React.FC<AdsCardProps> = ({
           }}
         >
           <NameWrapper>
-            <StyledImage src={image} alt={name} />
+            <StyledImage
+              src={image}
+              alt={name}
+              loading="lazy"
+              decoding="async"
+            />
             <Typography
               variant="h2"
               color="text.primary"
@@ -81,7 +82,7 @@ const AdsCard: React.FC<AdsCardProps> = ({
                 },
               }}
             >
-              {price} рублей
+              {formatPrice(price)} рублей
             </Typography>
             {quantity && <Typography variant="h4"> x {quantity}</Typography>}
           </NameWrapper>

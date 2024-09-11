@@ -13,6 +13,7 @@ import AdsCard from '../AdsCard/AdsCard';
 import { formatDate } from '../../utils/functions/formatDate';
 import { ExpandMore, NoHoverIconButton, RotatingIcon } from './MuiStyles';
 import { DetailsWrapper, Wrapper } from './OrderCardStyles';
+import { formatPrice } from '../../utils/functions/formatPrice';
 
 interface OrderCardProps {
   navLink: string;
@@ -77,7 +78,8 @@ const OrderCard: React.FC<OrderCardProps> = ({
               Способ доставки: <StyledSpan>{delivery}</StyledSpan>
             </Typography>
             <Typography variant="h2">
-              Сумма заказа: <StyledSpan>{totalAmount} рублей</StyledSpan>
+              Сумма заказа:{' '}
+              <StyledSpan>{formatPrice(totalAmount)} рублей</StyledSpan>
             </Typography>
             <Typography variant="h2">
               Наименований: <StyledSpan>{products.length}</StyledSpan>
