@@ -5,14 +5,13 @@ export const advertisementSchema = z.object({
   name: z.string(),
   description: z.string(),
   price: z.number().positive(),
-  createdAt: z.string().datetime(),
-  views: z.number().nonnegative(),
-  likes: z.number().nonnegative(),
-  imageUrl: z.string().url(),
+  createdAt: z.string(),
+  views: z.number(),
+  likes: z.number(),
+  imageUrl: z.string(),
 });
 
 export const advertisementListSchema = z.array(advertisementSchema);
-
 export type AdvertisementModel = z.infer<typeof advertisementSchema>;
 
 export type AdvertisementListModel = z.infer<typeof advertisementListSchema>;

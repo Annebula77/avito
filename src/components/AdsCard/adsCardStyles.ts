@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { media } from '../../styling/breakpoints';
 
 export const RowWrapper = styled.div`
-  padding: 20px 0 0;
+  padding: 20px 20px;
   margin: 0;
   width: 100%;
   display: flex;
@@ -36,13 +36,15 @@ export const NameWrapper = styled.article`
 
   ${media.lg`
     flex-direction: row;
-  `}
+     `}
 `;
 
 export const ReactionWrapper = styled.div`
   padding: 0;
   margin: 0;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   gap: 4px;
 `;

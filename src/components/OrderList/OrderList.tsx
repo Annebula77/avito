@@ -1,12 +1,13 @@
 import { Typography } from '@mui/material';
 import { StyledSection } from '../../styling/stylesToReuse';
-import OrderCard from '../OrderCard/OrderCard';
+// import OrderCard from '../OrderCard/OrderCard';
+import AdvertForm from '../AdvertForm/AdvertForm';
 
 const OrderList = () => {
   return (
     <StyledSection>
       <Typography variant="h1">OrderList</Typography>
-      <OrderCard
+      {/* <OrderCard
         navLink="#"
         orderNumber={123456}
         status={2}
@@ -15,7 +16,8 @@ const OrderList = () => {
         totalAmount={1000}
         delivery="самовывоз"
         products={[]}
-      />
+      /> */}
+      <AdvertForm />
     </StyledSection>
   );
 };

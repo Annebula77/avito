@@ -103,16 +103,8 @@ export const Main = styled.main`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
-
-  ${media.md`
-    padding: 40px 100px;
-  `}
-
-  ${media.xl`
-    padding: 40px 300px;
-  `}
+  align-items: center;
 `;
 
 // Styled Link for list items
@@ -120,6 +112,7 @@ export const Main = styled.main`
 export const CardLink = styled(Link)`
   margin: 0;
   padding: 0;
+  width: 100%;
   text-decoration: none;
   transition: opacity 0.4s ease;
   &:hover {
@@ -138,5 +131,6 @@ export const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 30px;
 `;

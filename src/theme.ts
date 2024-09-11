@@ -77,6 +77,34 @@ const theme = createTheme({
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiOutlinedInput-root': {
+            borderRadius: '80px',
+          },
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        outlined: {
+          '& .MuiOutlinedInput-root': {
+            borderRadius: '80px',
+          },
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          borderRadius: '80px',
+        },
+        notchedOutline: {
+          borderRadius: '80px',
+        },
+      },
+    },
   },
 });
 
