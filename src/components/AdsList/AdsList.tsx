@@ -105,6 +105,7 @@ const AdsList = () => {
       sortOrder: order,
     }));
   };
+
   if (adsError) {
     return <ErrorPage />;
   }

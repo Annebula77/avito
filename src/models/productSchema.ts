@@ -5,9 +5,9 @@ export const productSchema = z.object({
   name: z.string(),
   price: z.number(),
   createdAt: z.string(),
-  views: z.number(),
-  likes: z.number(),
-  imageUrl: z.string(),
+  views: z.number().optional(),
+  likes: z.number().optional(),
+  imageUrl: z.string().optional(),
   count: z.number(),
 });
 

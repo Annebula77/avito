@@ -11,12 +11,16 @@ import StatusComponent from '../StatusComponent/StatusComponent';
 import { StyledSpan } from '../../styling/stylesToReuse';
 import AdsCard from '../AdsCard/AdsCard';
 import { formatDate } from '../../utils/functions/formatDate';
-import { ExpandMore, NoHoverIconButton, RotatingIcon } from './MuiStyles';
-import { DetailsWrapper, Wrapper } from './OrderCardStyles';
+import { ExpandMore, RotatingIcon } from './MuiStyles';
+import {
+  DetailsWrapper,
+  NoHoverIconButton,
+  ProductsWrapper,
+  Wrapper,
+} from './OrderCardStyles';
 import { formatPrice } from '../../utils/functions/formatPrice';
 
 interface OrderCardProps {
-  navLink: string;
   orderNumber: number;
   status: number;
   createdAt: string;
@@ -24,9 +28,9 @@ interface OrderCardProps {
   totalAmount: number;
   delivery: string;
   products: ProductModel[];
+  onClick: () => void;
 }
 const OrderCard: React.FC<OrderCardProps> = ({
-  navLink,
   orderNumber,
   status,
   createdAt,
@@ -34,6 +38,7 @@ const OrderCard: React.FC<OrderCardProps> = ({
   totalAmount,
   delivery,
   products,
+  onClick,
 }) => {
   const [expanded, setExpanded] = useState(false);
   const handleExpandClick = () => {
@@ -41,7 +46,14 @@ const OrderCard: React.FC<OrderCardProps> = ({
   };
 
   return (
-    <Card sx={{ minWidth: '240px', maxWidth: '900px', padding: '20px' }}>
+    <Card
+      sx={{
+        minWidth: '240px',
+        maxWidth: '1200px',
+        width: '100%',
+        padding: '20px',
+      }}
+    >
       <CardHeader
         title={
           <Typography variant="h5">
@@ -58,7 +70,7 @@ const OrderCard: React.FC<OrderCardProps> = ({
                 color="primary"
               />
             ) : (
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="primary" onClick={onClick}>
                 Завершить заказ
               </Button>
             )}
@@ -74,14 +86,23 @@ const OrderCard: React.FC<OrderCardProps> = ({
       <CardContent>
         <Wrapper>
           <DetailsWrapper>
-            <Typography variant="h2">
+            <Typography
+              variant="h2"
+              sx={{ xs: { fontSize: '18px' }, md: { fontSize: '24px' } }}
+            >
               Способ доставки: <StyledSpan>{delivery}</StyledSpan>
             </Typography>
-            <Typography variant="h2">
+            <Typography
+              variant="h2"
+              sx={{ xs: { fontSize: '18px' }, md: { fontSize: '24px' } }}
+            >
               Сумма заказа:{' '}
               <StyledSpan>{formatPrice(totalAmount)} рублей</StyledSpan>
             </Typography>
-            <Typography variant="h2">
+            <Typography
+              variant="h2"
+              sx={{ xs: { fontSize: '18px' }, md: { fontSize: '24px' } }}
+            >
               Наименований: <StyledSpan>{products.length}</StyledSpan>
             </Typography>
           </DetailsWrapper>
@@ -99,29 +120,33 @@ const OrderCard: React.FC<OrderCardProps> = ({
             width: 'fit-content',
           }}
         >
-          <Typography
-            variant="h5"
-            sx={{ padding: '0 4px 0 10px', color: 'primary.main' }}
-          >
-            Показать все товары
-          </Typography>
-          <RotatingIcon expand={expanded} fontSize="large" />
+          <>
+            <Typography
+              variant="h5"
+              sx={{ padding: '0 4px 0 10px', color: 'primary.main' }}
+            >
+              Показать все товары
+            </Typography>
+            <RotatingIcon expand={expanded} fontSize="large" />
+          </>
         </ExpandMore>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          {products.map(product => (
-            <AdsCard
-              key={product.id}
-              name={product.name}
-              image={product.imageUrl}
-              price={product.price}
-              views={product.views}
-              likes={product.likes}
-              navLink={navLink}
-              quantity={product.count}
-            />
-          ))}
+          <ProductsWrapper>
+            {products.map(product => (
+              <AdsCard
+                key={product.id}
+                name={product.name}
+                image={product.imageUrl}
+                price={product.price}
+                views={product.views}
+                likes={product.likes}
+                navLink={`/ads/${product.id}`}
+                quantity={product.count}
+              />
+            ))}
+          </ProductsWrapper>
         </CardContent>
       </Collapse>
     </Card>

@@ -35,9 +35,3 @@ export const RotatingIcon = styled(ExpandMoreIcon)<{ expand: boolean }>(
     transform: expand ? 'rotate(180deg)' : 'rotate(0deg)',
   })
 );
-
-export const NoHoverIconButton = styled(IconButton)(() => ({
-  '&:hover': {
-    backgroundColor: 'transparent',
-  },
-}));

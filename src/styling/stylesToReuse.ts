@@ -122,17 +122,20 @@ export const CardLink = styled(Link)`
 
 export const StyledSpan = styled.span`
   color: rgba(66, 119, 202, 1);
+  padding: 0 20px;
 `;
 
 export const StyledSection = styled.section`
   padding: 0;
   margin: 0;
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
+  z-index: 0;
 `;
 
 export const ReactionWrapper = styled.div`

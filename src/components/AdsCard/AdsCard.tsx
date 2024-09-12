@@ -9,10 +9,10 @@ import { formatPrice } from '../../utils/functions/formatPrice';
 interface AdsCardProps {
   navLink: string;
   name: string;
-  image: string;
+  image?: string;
   price: number;
-  views: number;
-  likes: number;
+  views?: number;
+  likes?: number;
   quantity?: number;
   onClick?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
 }
@@ -67,6 +67,14 @@ const AdsCard: React.FC<AdsCardProps> = ({
             >
               {name}
             </Typography>
+            {quantity && (
+              <Typography
+                variant="h2"
+                sx={{ marginLeft: { xs: 0, md: 'auto' } }}
+              >
+                {quantity} шт. x
+              </Typography>
+            )}
             <Typography
               variant="h2"
               color="primary.main"
@@ -84,7 +92,6 @@ const AdsCard: React.FC<AdsCardProps> = ({
             >
               {formatPrice(price)} рублей
             </Typography>
-            {quantity && <Typography variant="h4"> x {quantity}</Typography>}
           </NameWrapper>
           <RowWrapper>
             <ReactionWrapper>

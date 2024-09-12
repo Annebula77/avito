@@ -26,4 +26,23 @@ export const DetailsWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  gap: 20px;
+`;
+
+export const NoHoverIconButton = styled.div`
+  margin: 0;
+  padding: 0;
+  &:hover {
+    background-color: transparent;
+  }
+`;
+
+export const ProductsWrapper = styled.div`
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 `;

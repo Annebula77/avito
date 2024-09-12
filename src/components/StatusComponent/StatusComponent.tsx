@@ -5,7 +5,7 @@ const getStatusText = (status: number): string => {
     case 0:
       return 'Заказ создан';
     case 1:
-      return 'Заказ работе';
+      return 'Заказ в работе';
     case 2:
       return 'Заказ готов к выдаче';
     case 3:
@@ -35,7 +35,7 @@ const getStatusColor = (status: number): string => {
 
 const StatusComponent = ({ status }: { status: number }) => {
   return (
-    <Typography variant="h4" sx={{ color: getStatusColor(status) }}>
+    <Typography variant="h5" sx={{ color: getStatusColor(status) }}>
       {getStatusText(status)}
     </Typography>
   );

@@ -39,7 +39,7 @@ const theme = createTheme({
     },
     h3: {
       fontFamily: 'Jost',
-      fontSize: '36px',
+      fontSize: '32px',
       fontStyle: 'normal',
       fontWeight: 600,
       lineHeight: 'normal',
