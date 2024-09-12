@@ -11,15 +11,6 @@ const theme = createTheme({
       main: 'rgba(229, 229, 229, 1)', // grey
       contrastText: 'rgba(229, 229, 229, 1)', // For text on secondary color, use primary
     },
-    error: {
-      main: 'rgba(255, 75, 107, 1)', // Assuming Alert is for errors red
-    },
-    warning: {
-      main: 'rgba(255, 233, 39, 1)', // Your UI kit Warning color yellow
-    },
-    success: {
-      main: 'rgba(5, 170, 111, 1)', // Your UI kit Success color green
-    },
     background: {
       default: 'rgba(255, 255, 255, 1)', // white background
       paper: 'rgba(255, 255, 255, 1)', // For elements like cards, dialogues
@@ -36,20 +27,23 @@ const theme = createTheme({
       fontStyle: 'normal',
       fontWeight: 700,
       lineHeight: '70px',
+      color: 'rgba(76, 81, 74, 1)',
     },
     h2: {
       fontFamily: 'Jost',
       fontSize: '24px',
       fontStyle: 'normal',
-      fontWeight: 600,
+      fontWeight: 500,
       lineHeight: 'normal',
+      color: 'rgba(76, 81, 74, 1)',
     },
     h3: {
       fontFamily: 'Jost',
-      fontSize: '36px',
+      fontSize: '32px',
       fontStyle: 'normal',
       fontWeight: 600,
       lineHeight: 'normal',
+      color: 'rgba(76, 81, 74, 1)',
     },
     h4: {
       fontFamily: 'Jost',
@@ -57,26 +51,56 @@ const theme = createTheme({
       fontStyle: 'normal',
       fontWeight: 400,
       lineHeight: 'normal',
+      color: 'rgba(76, 81, 74, 1)',
     },
     h5: {
       fontFamily: 'Jost',
-      fontSize: '28px',
+      fontSize: '20px',
       fontStyle: 'normal',
-      fontWeight: 600,
+      fontWeight: 500,
       lineHeight: 'normal',
+      color: 'rgba(76, 81, 74, 1)',
     },
   },
   components: {
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: '40px',
+          borderRadius: '80px',
         },
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
+          borderRadius: '80px',
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiOutlinedInput-root': {
+            borderRadius: '80px',
+          },
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        outlined: {
+          '& .MuiOutlinedInput-root': {
+            borderRadius: '80px',
+          },
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          borderRadius: '80px',
+        },
+        notchedOutline: {
           borderRadius: '80px',
         },
       },

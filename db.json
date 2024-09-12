@@ -8,26 +8,27 @@
       "createdAt": "2022-08-12T20:16:55.351Z",
       "views": 20,
       "likes": 2,
-      "imageUrl": ""
+      "imageUrl": "/filling.webp"
     },
     {
       "id": "2",
       "name": "Ведро снега",
-      "description": "Последняя возможность купить по выгодной цене!",
+      "description": "Последняя возможность купить по выгодной цене",
       "price": 3000,
       "createdAt": "2023-08-12T20:16:55.351Z",
       "views": 77832,
       "likes": 45666,
-      "imageUrl": ""
+      "imageUrl": "/filling.webp"
     },
     {
       "id": "3",
       "name": "Плащ невидимка",
+      "description": "Ношу не снимая.",
       "price": 10000000,
       "createdAt": "2024-08-12T20:16:55.351Z",
       "views": 900,
       "likes": 19,
-      "imageUrl": ""
+      "imageUrl": "/filling.webp"
     },
     {
       "id": "4",
@@ -37,16 +38,17 @@
       "createdAt": "2024-07-12T20:16:55.351Z",
       "views": 2000000,
       "likes": 2,
-      "imageUrl": ""
+      "imageUrl": "/filling.webp"
     },
     {
       "id": "5",
-      "name": "Носки",
-      "price": 6000,
+      "name": "Носки белые",
+      "description": "Ношу не снимая. Точно говорю",
+      "price": 6050,
       "createdAt": "2024-06-12T20:16:55.351Z",
       "views": 0,
       "likes": 0,
-      "imageUrl": ""
+      "imageUrl": "/filling.webp"
     },
     {
       "id": "6",
@@ -56,26 +58,207 @@
       "createdAt": "2024-04-12T20:16:55.351Z",
       "views": 1,
       "likes": 0,
-      "imageUrl": ""
+      "imageUrl": "/filling.webp"
     },
     {
       "id": "7",
       "name": "Угловой диван",
-      "description": "Стих для привлечения внимания: дама сдавала в багаж диван, чемодан, саквояж, картину, корзину, картонку и маленькую собачонку. выдали даме на станции четыре зеленых квитанции о том, что получен багаж: диван, чемодан, саквояж, картина, корзина, картонка и маленькая собачонка. вещи везут на перрон. кидают в открытый вагон. готово. уложен багаж: диван, чемодан, саквояж, картина, корзина, картонка и маленькая собачонка. но только раздался звонок, удрал из вагона щенок. хватились на станции дно: потеряно место одно. в испуге считают багаж: диван, чемодан, саквояж, картина, корзина, картонка… — товарищи! где собачонка? вдруг видят: стоит у колес огромный взъерошенный пес. поймали его — и в багаж, туда, где лежал саквояж, картина, корзина, картонка, где прежде была собачонка. приехали в город житомир. носильщик пятнадцатый номер везет на тележке багаж: диван, чемодан, саквояж, картину, корзину, картонку, а сзади ведут собачонку. собака-то как зарычит, а барыня как закричит: — разбойники! воры! уроды! собака — не той породы! швырнула она чемодан, ногой отпихнула диван, картину, корзину, картонку… — отдайте мою собачонку! — позвольте, мамаша! на станции, согласно багажной квитанции, от вас получили багаж: диван, чемодан, саквояж, картину, корзину, картонку и маленькую собачонку. однако за время пути собака могла подрасти!",
+      "description": "Стих для привлечения внимания: дама сдавала в багаж...",
       "price": 999,
       "createdAt": "2024-08-12T14:16:55.351Z",
       "views": 20000,
       "likes": 1,
-      "imageUrl": ""
+      "imageUrl": "/filling.webp"
     },
     {
       "id": "8",
       "name": "Новый айфон",
+      "description": "Без него не жизнь",
       "price": 100000,
       "createdAt": "2024-08-12T12:16:55.351Z",
       "views": 200000,
       "likes": 302,
-      "imageUrl": ""
+      "imageUrl": "/filling.webp"
+    },
+    {
+      "id": "9",
+      "name": "MacBook Pro 16",
+      "description": "Мощный ноутбук для профессионалов с экраном 16 дюймов.",
+      "price": 200000,
+      "createdAt": "2024-09-01T14:22:33.000Z",
+      "views": 150000,
+      "likes": 450,
+      "imageUrl": "/filling.webp"
+    },
+    {
+      "id": "10",
+      "name": "Apple Watch Series 8",
+      "description": "Умные часы с множеством функций для отслеживания здоровья и активности.",
+      "price": 45000,
+      "createdAt": "2024-07-30T10:45:22.123Z",
+      "views": 120000,
+      "likes": 230,
+      "imageUrl": "/filling.webp"
+    },
+    {
+      "id": "11",
+      "name": "Samsung Galaxy S24",
+      "description": "Мощный ноутбук для профессионалов с экраном 16 дюймов.",
+      "price": 7890,
+      "createdAt": "2024-06-15T09:12:11.765Z",
+      "views": 170000,
+      "likes": 310,
+      "imageUrl": "/filling.webp"
+    },
+    {
+      "id": "12",
+      "name": "Sony PlayStation 5",
+      "description": "Мощный ноутбук для профессионалов с экраном 16 дюймов.",
+      "price": 60000,
+      "createdAt": "2024-05-10T08:33:45.652Z",
+      "views": 220000,
+      "likes": 400,
+      "imageUrl": "/filling.webp"
+    },
+    {
+      "id": "13",
+      "name": "Xiaomi Mi 12",
+      "description": "Мощный ноутбук для профессионалов с экраном 16 дюймов.",
+      "price": 50000,
+      "createdAt": "2024-08-01T13:01:29.123Z",
+      "views": 90000,
+      "likes": 180,
+      "imageUrl": "/filling.webp"
+    },
+    {
+      "id": "14",
+      "name": "Nintendo Switch OLED",
+      "description": "Мощный ноутбук для профессионалов с экраном 16 дюймов.",
+      "price": 35000,
+      "createdAt": "2024-04-20T17:22:50.987Z",
+      "views": 80000,
+      "likes": 290,
+      "imageUrl": "/filling.webp"
+    },
+    {
+      "id": "15",
+      "name": "GoPro Hero 11",
+      "description": "Мощный ноутбук для профессионалов с экраном 16 дюймов.",
+      "price": 30000,
+      "createdAt": "2024-03-28T16:45:33.321Z",
+      "views": 60000,
+      "likes": 130,
+      "imageUrl": "/filling.webp"
+    },
+    {
+      "id": "16",
+      "name": "Microsoft Surface Laptop 5",
+      "description": "Мощный ноутбук для профессионалов с экраном 16 дюймов.",
+      "price": 150000,
+      "createdAt": "2024-07-05T11:34:12.456Z",
+      "views": 110000,
+      "likes": 210,
+      "imageUrl": "/filling.webp"
+    },
+    {
+      "id": "17",
+      "name": "iPad Pro 12",
+      "description": "Мощный ноутбук для профессионалов с экраном 16 дюймов.",
+      "price": 130000,
+      "createdAt": "2024-06-18T14:22:55.789Z",
+      "views": 90000,
+      "likes": 150,
+      "imageUrl": "/filling.webp"
+    },
+    {
+      "id": "18",
+      "name": "DJI Mini 3 Pro",
+      "description": "Мощный ноутбук для профессионалов с экраном 16 дюймов.",
+      "price": 80000,
+      "createdAt": "2024-05-21T09:15:33.101Z",
+      "views": 70000,
+      "likes": 190,
+      "imageUrl": "/filling.webp"
+    },
+    {
+      "id": "1726070627893",
+      "name": "Электробритва",
+      "description": "Крутая вещь, всем нужна",
+      "price": 1500,
+      "imageUrl": "/filling.webp",
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2024-09-11T16:03:47.893Z"
+    },
+    {
+      "id": "1726070778896",
+      "name": "Чайник",
+      "description": "Всегда горячий",
+      "price": 35678,
+      "imageUrl": "/filling.webp",
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2024-09-11T16:06:18.896Z"
+    },
+    {
+      "id": "1726071055670",
+      "name": "Чайник",
+      "description": "Всегда горячий",
+      "price": 35678,
+      "imageUrl": "/filling.webp",
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2024-09-11T16:10:55.670Z"
+    },
+    {
+      "id": "1726072846524",
+      "name": "Кристраж",
+      "description": "Страшная штука",
+      "price": 4567893,
+      "imageUrl": "/filling.webp",
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2024-09-11T16:40:46.524Z"
+    },
+    {
+      "id": "1726075615947",
+      "name": "Больше чем чай",
+      "description": "Глупая затея была",
+      "price": 1000,
+      "imageUrl": "/filling.webp",
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2024-09-11T17:26:55.947Z"
+    },
+    {
+      "id": "1726083678097",
+      "name": "Полет в космос",
+      "description": "Если на земле вас ничего не держит, можете воспользоваться нашим предложением",
+      "price": 3475756,
+      "imageUrl": "/filling.webp",
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2024-09-11T19:41:18.097Z"
+    },
+    {
+      "id": "1726148574066",
+      "name": "Виноград",
+      "description": "Очень полезно и вкусно",
+      "price": 1200,
+      "imageUrl": "/filling.webp",
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2024-09-12T13:42:54.066Z"
+    },
+    {
+      "id": "1726157682079",
+      "name": "Hello World",
+      "description": "Тест и тест",
+      "price": 456789,
+      "imageUrl": "/filling.webp",
+      "views": 0,
+      "likes": 0,
+      "createdAt": "2024-09-12T16:14:42.079Z"
     }
   ],
   "orders": [
@@ -85,7 +268,7 @@
       "createdAt": "2024-08-12T20:20:55.351Z",
       "finishedAt": "",
       "total": 314000,
-      "deliveryWay": "mail",
+      "deliveryWay": "Самовывоз",
       "items": [
         {
           "id": "8",
@@ -94,18 +277,17 @@
           "createdAt": "2024-08-12T12:16:55.351Z",
           "views": 200000,
           "likes": 302,
-          "imageUrl": "",
+          "imageUrl": "/filling.webp",
           "count": 3
         },
         {
           "id": "6",
           "name": "Картонная коробка",
-          "description": "Почная.",
           "price": 7000,
           "createdAt": "2024-04-12T20:16:55.351Z",
           "views": 1,
           "likes": 0,
-          "imageUrl": "",
+          "imageUrl": "/filling.webp",
           "count": 2
         }
       ]
@@ -116,17 +298,16 @@
       "createdAt": "2024-08-12T20:20:55.351Z",
       "finishedAt": "2024-08-12T20:25:55.351Z",
       "total": 33000,
-      "deliveryWay": "sdek",
+      "deliveryWay": "Курьерская служба",
       "items": [
         {
           "id": "2",
           "name": "Ведро снега",
-          "description": "Последняя возможность купить по выгодной цене!",
           "price": 3000,
           "createdAt": "2023-08-12T20:16:55.351Z",
           "views": 77832,
           "likes": 45666,
-          "imageUrl": "",
+          "imageUrl": "/filling.webp",
           "count": 10
         },
         {
@@ -136,8 +317,208 @@
           "createdAt": "2024-06-12T20:16:55.351Z",
           "views": 0,
           "likes": 0,
-          "imageUrl": "",
+          "imageUrl": "/filling.webp",
           "count": 5
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "status": 1,
+      "createdAt": "2024-08-15T14:30:00.000Z",
+      "finishedAt": "",
+      "total": 250000,
+      "deliveryWay": "Курьер",
+      "items": [
+        {
+          "id": "9",
+          "name": "MacBook Pro 16",
+          "price": 200000,
+          "createdAt": "2024-09-01T14:22:33.000Z",
+          "views": 150000,
+          "likes": 450,
+          "imageUrl": "/filling.webp",
+          "count": 1
+        },
+        {
+          "id": "15",
+          "name": "GoPro Hero 11",
+          "price": 30000,
+          "createdAt": "2024-03-28T16:45:33.321Z",
+          "views": 60000,
+          "likes": 130,
+          "imageUrl": "/filling.webp",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "status": 3,
+      "createdAt": "2024-07-12T18:00:00.000Z",
+      "finishedAt": "2024-07-14T15:00:00.000Z",
+      "total": 120000,
+      "deliveryWay": "Почта России",
+      "items": [
+        {
+          "id": "11",
+          "name": "Samsung Galaxy S23",
+          "price": 95000,
+          "createdAt": "2024-06-15T09:12:11.765Z",
+          "views": 170000,
+          "likes": 310,
+          "imageUrl": "/filling.webp",
+          "count": 1
+        },
+        {
+          "id": "14",
+          "name": "Nintendo Switch OLED",
+          "price": 35000,
+          "createdAt": "2024-04-20T17:22:50.987Z",
+          "views": 80000,
+          "likes": 290,
+          "imageUrl": "/filling.webp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "status": 2,
+      "createdAt": "2024-06-22T12:10:00.000Z",
+      "finishedAt": "2024-09-12T11:53:24.120Z",
+      "total": 35000,
+      "deliveryWay": "Самовывоз",
+      "items": [
+        {
+          "id": "17",
+          "name": "iPad Pro 12.9",
+          "price": 130000,
+          "createdAt": "2024-06-18T14:22:55.789Z",
+          "views": 90000,
+          "likes": 150,
+          "imageUrl": "/filling.webp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "status": 4,
+      "createdAt": "2024-08-22T16:30:00.000Z",
+      "finishedAt": "2024-08-23T10:00:00.000Z",
+      "total": 13000,
+      "deliveryWay": "Яндекс.Доставка",
+      "items": [
+        {
+          "id": "6",
+          "name": "Картонная коробка",
+          "price": 7000,
+          "createdAt": "2024-04-12T20:16:55.351Z",
+          "views": 1,
+          "likes": 0,
+          "imageUrl": "/filling.webp",
+          "count": 1
+        },
+        {
+          "id": "7",
+          "name": "Угловой диван",
+          "price": 999,
+          "createdAt": "2024-08-12T14:16:55.351Z",
+          "views": 20000,
+          "likes": 1,
+          "imageUrl": "/filling.webp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "status": 1,
+      "createdAt": "2024-09-05T11:00:00.000Z",
+      "finishedAt": "",
+      "total": 150000,
+      "deliveryWay": "Курьер",
+      "items": [
+        {
+          "id": "16",
+          "name": "Microsoft Surface Laptop 5",
+          "price": 150000,
+          "createdAt": "2024-07-05T11:34:12.456Z",
+          "views": 110000,
+          "likes": 210,
+          "imageUrl": "/filling.webp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "status": 0,
+      "createdAt": "2024-08-30T14:45:00.000Z",
+      "finishedAt": "2024-09-12T12:01:54.512Z",
+      "total": 60000,
+      "deliveryWay": "Самовывоз",
+      "items": [
+        {
+          "id": "12",
+          "name": "Sony PlayStation 5",
+          "price": 60000,
+          "createdAt": "2024-05-10T08:33:45.652Z",
+          "views": 220000,
+          "likes": 400,
+          "imageUrl": "/filling.webp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "status": 4,
+      "createdAt": "2024-09-02T09:20:00.000Z",
+      "finishedAt": "2024-09-03T15:00:00.000Z",
+      "total": 240000,
+      "deliveryWay": "Курьерская служба",
+      "items": [
+        {
+          "id": "9",
+          "name": "MacBook Pro 16",
+          "price": 200000,
+          "createdAt": "2024-09-01T14:22:33.000Z",
+          "views": 150000,
+          "likes": 450,
+          "imageUrl": "/filling.webp",
+          "count": 1
+        },
+        {
+          "id": "10",
+          "name": "Apple Watch Series 8",
+          "price": 45000,
+          "createdAt": "2024-07-30T10:45:22.123Z",
+          "views": 120000,
+          "likes": 230,
+          "imageUrl": "/filling.webp",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "status": 0,
+      "createdAt": "2024-09-08T14:10:00.000Z",
+      "finishedAt": "",
+      "total": 95000,
+      "deliveryWay": "Яндекс.Доставка",
+      "items": [
+        {
+          "id": "11",
+          "name": "Samsung Galaxy S23",
+          "price": 95000,
+          "createdAt": "2024-06-15T09:12:11.765Z",
+          "views": 170000,
+          "likes": 310,
+          "imageUrl": "/filling.webp",
+          "count": 1
         }
       ]
     }
