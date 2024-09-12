@@ -33,7 +33,16 @@ export const advertisementSchema = z.object({
   }),
 });
 
-export const advertisementListSchema = z.array(advertisementSchema);
+export const advertisementListSchema = z.object({
+  first: z.number(),
+  prev: z.number().nullable(),
+  next: z.number().nullable(),
+  last: z.number(),
+  pages: z.number(),
+  items: z.number(),
+  data: z.array(advertisementSchema),
+});
+
 export type AdvertisementModel = z.infer<typeof advertisementSchema>;
 
 export type AdvertisementListModel = z.infer<typeof advertisementListSchema>;

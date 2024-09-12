@@ -19,6 +19,7 @@
     "@reduxjs/toolkit": "^2.2.7",
     "@types/react-redux": "^7.1.33",
     "json-server": "^1.0.0-beta.2",
+    "lodash.debounce": "^4.0.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet-async": "^2.0.5",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@types/lodash.debounce": "^4.0.9",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/styled-components": "^5.1.34",

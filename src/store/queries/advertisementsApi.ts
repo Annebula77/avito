@@ -1,30 +1,38 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import {
-  advertisementListSchema,
   type AdvertisementListModel,
+  advertisementListSchema,
   type AdvertisementModel,
   advertisementSchema,
 } from '../../models/advertismentSchema';
 import { z } from 'zod';
 
+export interface SearchParams {
+  name: string;
+  _page: number;
+  _per_page: number;
+  _sort: string;
+  _order: 'asc' | 'desc';
+}
+
 export const advertisementsApi = createApi({
   reducerPath: 'advertisementsApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000' }),
   endpoints: builder => ({
-    getAdvertisements: builder.query({
-      query: ({ page = 1, per_page = 10, search = '', filter = {} }) => {
-        const queryParams = new URLSearchParams({
-          _start: ((page - 1) * per_page).toString(),
-          _limit: per_page.toString(),
-          q: search,
-          ...filter,
-        });
-        return `advertisements?${queryParams.toString()}`;
-      },
+    getAdvertisements: builder.query<AdvertisementListModel, SearchParams>({
+      query: ({ name, _page, _per_page, _sort, _order }) => ({
+        url: '/advertisements',
+        params: {
+          name,
+          _page,
+          _per_page,
+          _sort,
+          _order,
+        },
+      }),
       transformResponse: (response: AdvertisementListModel) => {
         try {
-          const advertisements = advertisementListSchema.parse(response);
-          return advertisements;
+          return advertisementListSchema.parse(response);
         } catch (error) {
           if (error instanceof z.ZodError) {
             console.error('Zod validation error:', error.errors);
@@ -34,10 +42,6 @@ export const advertisementsApi = createApi({
           throw error;
         }
       },
-    }),
-    getAdvertisementsCount: builder.query({
-      query: () => 'advertisements',
-      transformResponse: (response: AdvertisementModel[]) => response.length,
     }),
     getAdvertisementById: builder.query({
       query: id => `advertisements/${id}`,
@@ -84,5 +88,4 @@ export const {
   useCreateAdvertisementMutation,
   useUpdateAdvertisementMutation,
   useDeleteAdvertisementMutation,
-  useGetAdvertisementsCountQuery,
 } = advertisementsApi;

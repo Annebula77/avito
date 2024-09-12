@@ -47,15 +47,22 @@ const SortingTypeContainer = styled.div`
 `;
 
 interface ActionPanelProps {
-  advertisementCount?: number;
-  handleFilterChange?: (event: SelectChangeEvent) => void;
-  newAdsClicked?: () => void;
+  advertisementCount: number;
+  handleFilterChange: (event: SelectChangeEvent) => void;
+  newAdsClicked: () => void;
+  onSearchChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onSortChange?: (
+    field: 'price' | 'likes' | 'views',
+    order: 'asc' | 'desc'
+  ) => void;
 }
 
 const ActionPanel: React.FC<ActionPanelProps> = ({
   advertisementCount = 10,
-  handleFilterChange,
   newAdsClicked,
+  handleFilterChange,
+  onSearchChange,
+  onSortChange,
 }) => {
   const [selectedCount, setSelectedCount] = useState(advertisementCount);
 
@@ -84,6 +91,7 @@ const ActionPanel: React.FC<ActionPanelProps> = ({
         <SortingTypeContainer>
           <TextField
             id="searchField"
+            onChange={onSearchChange}
             slotProps={{
               input: {
                 startAdornment: (
@@ -125,31 +133,46 @@ const ActionPanel: React.FC<ActionPanelProps> = ({
           </Typography>
           <SortingTypeContainer>
             <ActionContainer>
-              <Button>
+              <Button
+                type="button"
+                onClick={() => onSortChange?.('likes', 'desc')}
+              >
                 <FavoriteRoundedIcon sx={{ color: 'rgba(255, 75, 107, 1)' }} />
                 <ArrowDownwardRoundedIcon />
               </Button>
             </ActionContainer>
             <ActionContainer>
-              <Button>
+              <Button
+                type="button"
+                onClick={() => onSortChange?.('likes', 'asc')}
+              >
                 <FavoriteRoundedIcon sx={{ color: 'rgba(255, 75, 107, 1)' }} />
                 <ArrowUpwardRoundedIcon />
               </Button>
             </ActionContainer>
             <ActionContainer>
-              <Button>
+              <Button
+                type="button"
+                onClick={() => onSortChange?.('views', 'desc')}
+              >
                 <StackedBarChartRoundedIcon />
                 <ArrowDownwardRoundedIcon />
               </Button>
             </ActionContainer>
             <ActionContainer>
-              <Button>
+              <Button
+                type="button"
+                onClick={() => onSortChange?.('views', 'asc')}
+              >
                 <StackedBarChartRoundedIcon />
                 <ArrowUpwardRoundedIcon />
               </Button>
             </ActionContainer>
             <ActionContainer>
-              <Button>
+              <Button
+                type="button"
+                onClick={() => onSortChange?.('price', 'desc')}
+              >
                 <CurrencyRubleRoundedIcon
                   sx={{ color: 'rgba(76, 81, 74, 1)' }}
                 />
@@ -157,7 +180,10 @@ const ActionPanel: React.FC<ActionPanelProps> = ({
               </Button>
             </ActionContainer>
             <ActionContainer>
-              <Button>
+              <Button
+                type="button"
+                onClick={() => onSortChange?.('price', 'asc')}
+              >
                 <CurrencyRubleRoundedIcon
                   sx={{ color: 'rgba(76, 81, 74, 1)' }}
                 />
