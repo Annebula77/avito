@@ -8,7 +8,6 @@ import ArrowDownwardRoundedIcon from '@mui/icons-material/ArrowDownwardRounded';
 import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
 import StackedBarChartRoundedIcon from '@mui/icons-material/StackedBarChartRounded';
 import CurrencyRubleRoundedIcon from '@mui/icons-material/CurrencyRubleRounded';
-import styled from 'styled-components';
 import {
   Button,
   MenuItem,
@@ -18,33 +17,11 @@ import {
   Typography,
 } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-
-const SortingContainer = styled.article`
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-`;
-
-const ActionContainer = styled.div`
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-`;
-
-const SortingTypeContainer = styled.div`
-  margin: 0;
-  padding: 20px 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-`;
+import {
+  SortingTypeContainer,
+  ActionContainer,
+  SortingContainer,
+} from './actionPanelStyles';
 
 interface ActionPanelProps {
   advertisementCount: number;
@@ -65,6 +42,19 @@ const ActionPanel: React.FC<ActionPanelProps> = ({
   onSortChange,
 }) => {
   const [selectedCount, setSelectedCount] = useState(advertisementCount);
+  const [activeSort, setActiveSort] = useState<'asc' | 'desc' | null>(null);
+  const [activeField, setActiveField] = useState<
+    'price' | 'likes' | 'views' | null
+  >(null);
+
+  const handleSortClick = (
+    field: 'price' | 'likes' | 'views',
+    order: 'asc' | 'desc'
+  ) => {
+    setActiveField(field);
+    setActiveSort(order);
+    onSortChange?.(field, order);
+  };
 
   useEffect(() => {
     if (advertisementCount) {
@@ -112,7 +102,14 @@ const ActionPanel: React.FC<ActionPanelProps> = ({
               id="ads-on-page-select"
               value={selectedCount.toString()}
               onChange={handleSelectChange}
-              sx={{ width: '70px' }}
+              sx={{ width: '120px' }}
+              slotProps={{
+                root: {
+                  sx: {
+                    padding: '0px 20px',
+                  },
+                },
+              }}
             >
               <MenuItem value={10}>10</MenuItem>
               <MenuItem value={20}>20</MenuItem>
@@ -135,7 +132,12 @@ const ActionPanel: React.FC<ActionPanelProps> = ({
             <ActionContainer>
               <Button
                 type="button"
-                onClick={() => onSortChange?.('likes', 'desc')}
+                variant={
+                  activeSort === 'desc' && activeField === 'likes'
+                    ? 'contained'
+                    : 'outlined'
+                }
+                onClick={() => handleSortClick('likes', 'desc')}
               >
                 <FavoriteRoundedIcon sx={{ color: 'rgba(255, 75, 107, 1)' }} />
                 <ArrowDownwardRoundedIcon />
@@ -143,8 +145,13 @@ const ActionPanel: React.FC<ActionPanelProps> = ({
             </ActionContainer>
             <ActionContainer>
               <Button
+                variant={
+                  activeSort === 'asc' && activeField === 'likes'
+                    ? 'contained'
+                    : 'outlined'
+                }
                 type="button"
-                onClick={() => onSortChange?.('likes', 'asc')}
+                onClick={() => handleSortClick('likes', 'asc')}
               >
                 <FavoriteRoundedIcon sx={{ color: 'rgba(255, 75, 107, 1)' }} />
                 <ArrowUpwardRoundedIcon />
@@ -153,7 +160,12 @@ const ActionPanel: React.FC<ActionPanelProps> = ({
             <ActionContainer>
               <Button
                 type="button"
-                onClick={() => onSortChange?.('views', 'desc')}
+                variant={
+                  activeSort === 'desc' && activeField === 'views'
+                    ? 'contained'
+                    : 'outlined'
+                }
+                onClick={() => handleSortClick('views', 'desc')}
               >
                 <StackedBarChartRoundedIcon />
                 <ArrowDownwardRoundedIcon />
@@ -161,8 +173,13 @@ const ActionPanel: React.FC<ActionPanelProps> = ({
             </ActionContainer>
             <ActionContainer>
               <Button
+                variant={
+                  activeSort === 'asc' && activeField === 'views'
+                    ? 'contained'
+                    : 'outlined'
+                }
                 type="button"
-                onClick={() => onSortChange?.('views', 'asc')}
+                onClick={() => handleSortClick('views', 'asc')}
               >
                 <StackedBarChartRoundedIcon />
                 <ArrowUpwardRoundedIcon />
@@ -171,7 +188,12 @@ const ActionPanel: React.FC<ActionPanelProps> = ({
             <ActionContainer>
               <Button
                 type="button"
-                onClick={() => onSortChange?.('price', 'desc')}
+                variant={
+                  activeSort === 'desc' && activeField === 'price'
+                    ? 'contained'
+                    : 'outlined'
+                }
+                onClick={() => handleSortClick('price', 'desc')}
               >
                 <CurrencyRubleRoundedIcon
                   sx={{ color: 'rgba(76, 81, 74, 1)' }}
@@ -182,7 +204,12 @@ const ActionPanel: React.FC<ActionPanelProps> = ({
             <ActionContainer>
               <Button
                 type="button"
-                onClick={() => onSortChange?.('price', 'asc')}
+                variant={
+                  activeSort === 'asc' && activeField === 'price'
+                    ? 'contained'
+                    : 'outlined'
+                }
+                onClick={() => handleSortClick('price', 'asc')}
               >
                 <CurrencyRubleRoundedIcon
                   sx={{ color: 'rgba(76, 81, 74, 1)' }}

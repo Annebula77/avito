@@ -22,7 +22,6 @@ export const ordersApi = createApi({
         _order = 'asc',
       }) => {
         const params = new URLSearchParams();
-
         status.forEach(st => {
           params.append('status', st.toString());
         });

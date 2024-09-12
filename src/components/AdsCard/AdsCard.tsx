@@ -5,6 +5,7 @@ import LocalMallRoundedIcon from '@mui/icons-material/LocalMallRounded';
 import { CardLink, ReactionWrapper } from '../../styling/stylesToReuse';
 import { NameWrapper, RowWrapper, StyledImage } from './adsCardStyles';
 import { formatPrice } from '../../utils/functions/formatPrice';
+import { useNavigate } from 'react-router-dom';
 
 interface AdsCardProps {
   navLink: string;
@@ -14,7 +15,7 @@ interface AdsCardProps {
   views?: number;
   likes?: number;
   quantity?: number;
-  onClick?: (event: React.SyntheticEvent<HTMLButtonElement>) => void;
+  productId: string;
 }
 
 const AdsCard: React.FC<AdsCardProps> = ({
@@ -25,20 +26,22 @@ const AdsCard: React.FC<AdsCardProps> = ({
   likes,
   navLink,
   quantity,
-  onClick,
+  productId,
 }) => {
+  const navigate = useNavigate();
   const handleClick = (event: React.SyntheticEvent<HTMLButtonElement>) => {
     event.stopPropagation();
     event.preventDefault();
-    onClick?.(event);
+    navigate('/orders', { state: { productId } });
   };
 
   return (
     <CardLink to={navLink}>
       <Card
         sx={{
-          minWidth: '200px',
-          maxWidth: '900px',
+          minWidth: { sx: '300px', sm: '400px', md: '900px', lg: '1100px' },
+          maxWidth: '1300px',
+          width: '100%',
           paddingRight: { xs: '0px', md: '20px' },
         }}
       >

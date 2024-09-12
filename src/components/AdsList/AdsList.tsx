@@ -1,26 +1,19 @@
-import {
-  Box,
-  Modal,
-  Pagination,
-  SelectChangeEvent,
-  Typography,
-} from '@mui/material';
+import { Box, Modal, Pagination, Typography } from '@mui/material';
 import AdsCard from '../AdsCard/AdsCard';
 import { StyledSection } from '../../styling/stylesToReuse';
-import { useGetAdvertisementsQuery } from '../../store/queries/advertisementsApi';
-import { useCallback, useState } from 'react';
 import ErrorPage from '../../routes/errorPage';
 import Loader from '../Loader/Loader';
 import styled from 'styled-components';
 import ActionPanel from '../ActionPanel/ActionPanel';
 import AdvertForm from '../AdvertForm/AdvertForm';
 import { AdvertisementModel } from '../../models/advertismentSchema';
-import debounce from 'lodash.debounce';
+import useAdsList from './useAdsList';
 
 const ListWrapper = styled.ul`
-  margin: 50px;
-  padding: 0;
+  margin: 0;
+  padding: 50px;
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -31,81 +24,24 @@ const ListWrapper = styled.ul`
 const LisItemStyles = styled.li`
   margin: 50;
   padding: 0;
-  width: 100%;
   display: flex;
   list-style: none;
 `;
 
 const AdsList = () => {
-  const [filters, setFilters] = useState({
-    page: 1,
-    perPage: 10,
-    search: '',
-    sortBy: 'price' as 'price' | 'likes' | 'views',
-    sortOrder: 'desc' as 'asc' | 'desc',
-  });
-  const [open, setOpen] = useState(false);
-
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  const queryParams = {
-    name: filters.search,
-    _page: filters.page,
-    _per_page: filters.perPage,
-    _sort: filters.sortBy,
-    _order: filters.sortOrder,
-  };
-
   const {
+    open,
+    handleOpen,
+    handleClose,
     data,
-    isLoading: isLoadingAds,
-    error: adsError,
-  } = useGetAdvertisementsQuery(queryParams);
-
-  const handlePageChange = (
-    _event: React.ChangeEvent<unknown>,
-    value: number
-  ) => {
-    setFilters(prevFilters => ({
-      ...prevFilters,
-      page: value,
-    }));
-  };
-
-  const debouncedSearch = useCallback(
-    debounce((value: string) => {
-      setFilters(prevFilters => ({
-        ...prevFilters,
-        search: value,
-        page: 1,
-      }));
-    }, 500),
-    []
-  );
-
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    debouncedSearch(event.target.value);
-  };
-
-  const handleFilterChange = (event: SelectChangeEvent) => {
-    setFilters(prevFilters => ({
-      ...prevFilters,
-      perPage: Number(event.target.value),
-    }));
-  };
-
-  const handleSortChange = (
-    field: 'price' | 'likes' | 'views',
-    order: 'asc' | 'desc'
-  ) => {
-    setFilters(prevFilters => ({
-      ...prevFilters,
-      sortBy: field,
-      sortOrder: order,
-    }));
-  };
-
+    isLoadingAds,
+    adsError,
+    filters,
+    handlePageChange,
+    handleSearchChange,
+    handleFilterChange,
+    handleSortChange,
+  } = useAdsList();
   if (adsError) {
     return <ErrorPage />;
   }
@@ -135,6 +71,7 @@ const AdsList = () => {
               views={advertisement.views}
               likes={advertisement.likes}
               navLink={`/ads/${advertisement.id}`}
+              productId={advertisement.id}
             />
           </LisItemStyles>
         ))}

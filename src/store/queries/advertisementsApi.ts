@@ -9,10 +9,10 @@ import { z } from 'zod';
 
 export interface SearchParams {
   name: string;
-  _page: number;
-  _per_page: number;
   _sort: string;
   _order: 'asc' | 'desc';
+  _page: number;
+  _per_page: number;
 }
 
 export const advertisementsApi = createApi({
@@ -20,14 +20,14 @@ export const advertisementsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000' }),
   endpoints: builder => ({
     getAdvertisements: builder.query<AdvertisementListModel, SearchParams>({
-      query: ({ name, _page, _per_page, _sort, _order }) => ({
+      query: ({ name, _sort, _order, _page, _per_page }) => ({
         url: '/advertisements',
         params: {
           name,
-          _page,
-          _per_page,
           _sort,
           _order,
+          _page,
+          _per_page,
         },
       }),
       transformResponse: (response: AdvertisementListModel) => {

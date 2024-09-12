@@ -144,6 +144,7 @@ const OrderCard: React.FC<OrderCardProps> = ({
                 likes={product.likes}
                 navLink={`/ads/${product.id}`}
                 quantity={product.count}
+                productId={product.id}
               />
             ))}
           </ProductsWrapper>

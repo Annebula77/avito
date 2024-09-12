@@ -1,50 +1,76 @@
-# React + TypeScript + Vite
+## Описание
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Classified App — это приложение для управления объявлениями и заказами на товары. Пользователи могут просматривать, добавлять и редактировать объявления, а также оформлять заказы на товары. В проекте реализована логика взаимодействия с заказами, фильтрация товаров, сортировка, а также поддержка обработки и завершения заказов.
 
-Currently, two official plugins are available:
+## Технологии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Проект использует следующие технологии и библиотеки:
 
-## Expanding the ESLint configuration
+- **React**: библиотека для построения пользовательских интерфейсов.
+- **React DOM**: библиотека для работы с DOM в React-приложениях.
+- **Vite**: инструмент для сборки и разработки, обеспечивающий быструю работу приложения.
+- **TypeScript**: язык программирования, добавляющий статическую типизацию в JavaScript.
+- **MUI (Material-UI)**: набор компонентов для построения интерфейса в соответствии с Material Design.
+  - `@mui/icons-material`: иконки для интерфейса.
+  - `@emotion/react`, `@emotion/styled`: стилизация компонентов с использованием Emotion.
+- **Redux Toolkit**: набор инструментов для управления состоянием приложения через Redux.
+- **React Redux**: библиотека для интеграции Redux с React.
+- **React Router DOM**: библиотека для маршрутизации в React-приложениях.
+- **Styled Components**: библиотека для стилизации компонентов с помощью CSS-in-JS.
+- **Zod**: библиотека для валидации данных и создания схем.
+- **JSON Server**: простой сервер для хранения и обработки данных в формате JSON, используется для разработки и тестирования API.
+- **Lodash.debounce**: утилита для создания функций с задержкой вызова, используется для оптимизации ввода данных и запросов.
+- **React Helmet Async**: управление элементами `<head>` в React-приложении для SEO.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Скрипты
 
-- Configure the top-level `parserOptions` property like this:
+- `dev`: запуск приложения в режиме разработки с помощью Vite.
+- `build`: сборка приложения с использованием Vite и TypeScript.
+- `lint`: запуск ESLint для проверки кода на наличие ошибок и соответствие правилам.
+- `preview`: предварительный просмотр собранного приложения.
+- `server`: запуск JSON-сервера для эмуляции API и работы с данными в формате JSON.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Установка и запуск
+
+1. Установите зависимости:
+
+   ```bash
+   npm install
+
+   ```
+
+2. Запустите приложение в режиме разработки:
+
+   bash
+
+   ```
+   npm run dev
+   ```
+
+3. Для запуска локального сервера с тестовыми данными:
+
+bash
+
+```
+npm run server
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+4. Для сборки приложения:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+bash
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+ npm run build
+```
+
+## Основные зависимости
+
+-`@mui/material` — компоненты Material-UI для создания UI. -`Redux Toolkit` — управление состоянием приложения. -`Styled Components` — для создания стилизованных компонентов. -`Zod` — для валидации данных. -`JSON Server` — для разработки API.
+
+## Разработка
+
+- `ESLint` — используется для поддержания чистоты и стандартов кода.
+- `Prettier` — для форматирования кода.
+- `TypeScript` — для строгой типизации кода.
+
+## Особенности реализации
